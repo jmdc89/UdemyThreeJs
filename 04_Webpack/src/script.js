@@ -14,6 +14,8 @@ mesh.position.z = 1
 mesh.scale.x = 0.5
 mesh.scale.y = 2
 mesh.scale.z = 0.3
+mesh.rotation.x = Math.PI * 0.25
+mesh.rotation.y = Math.PI * 0.5
 scene.add(mesh)
 
 // Sizes
