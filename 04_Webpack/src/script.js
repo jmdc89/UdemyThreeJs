@@ -5,18 +5,28 @@ import * as THREE from 'three'
 const scene = new THREE.Scene()
 
 // Object
-const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
-const mesh = new THREE.Mesh(geometry, material)
-mesh.position.x = 0.5
-mesh.position.y = 0.4
-mesh.position.z = 1
-mesh.scale.x = 0.5
-mesh.scale.y = 2
-mesh.scale.z = 0.3
-mesh.rotation.x = Math.PI * 0.25
-mesh.rotation.y = Math.PI * 0.5
-scene.add(mesh)
+const group = new THREE.Group()
+scene.add(group)
+
+const cube1 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube1.position.x = -1.5
+
+const cube2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube2.position.x = 0
+
+const cube3 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube3.position.x = 1.5
+
+group.add(cube1,cube2,cube3)
 
 // Sizes
 const sizes = {
