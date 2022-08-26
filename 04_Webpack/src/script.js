@@ -11,6 +11,9 @@ const mesh = new THREE.Mesh(geometry, material)
 mesh.position.x = 0.5
 mesh.position.y = 0.4
 mesh.position.z = 1
+mesh.scale.x = 0.5
+mesh.scale.y = 2
+mesh.scale.z = 0.3
 scene.add(mesh)
 
 // Sizes
