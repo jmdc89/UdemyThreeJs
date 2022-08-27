@@ -32,10 +32,17 @@ renderer.setSize(sizes.width, sizes.height)
 
 // Animation
 
+let time = Date.now()
+
 const tick = () => {
 
+    // Time
+    const currentTime = Date.now()
+    const deltaTime = currentTime - time
+    time = currentTime
+
     // Update objects
-    mesh.rotation.y += 0.01
+    mesh.rotation.y += 0.01 * deltaTime
 
     // Render
     renderer.render(scene, camera)
