@@ -1,5 +1,6 @@
 import './style.css'
 import * as THREE from 'three'
+import { OrbiControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 /**
  * Base
@@ -66,10 +67,10 @@ const tick = () =>
     // Update camera
     // camera.position.x = cursor.x * 5
     // camera.position.y = cursor.y * 5
-    camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2
-    camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2
-    camera.position.y = cursor.y * 3
-    camera.lookAt(mesh.position)
+    // camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2
+    // camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2
+    // camera.position.y = cursor.y * 3
+    // camera.lookAt(mesh.position)
 
     // Render
     renderer.render(scene, camera)
