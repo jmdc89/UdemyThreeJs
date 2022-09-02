@@ -20,6 +20,13 @@ const positionsArray = new Float32Array([
     0, 1, 0, //Segundo
     1, 0, 0 // Tercero
 ])
+
+//Transformando nuestro Array en un BufferAtribute
+const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3)
+
+//Ahora podemos añadir este atributo a nuestra BufferGeometry
+geometry.setAttribute('position', positionsAttribute)
+
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
