@@ -27,6 +27,18 @@ const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
 /**
+ * Debug
+ */
+// gui.add(mesh.position, 'y')
+// gui.add(mesh.position, 'y', - 3, 3, 0.01)
+// gui.add(mesh.position, 'y').min(- 3).max(3).step(0.01)
+gui
+    .add(mesh.position, 'y')
+    .min(- 3)
+    .max(3)
+    .step(0.01)
+
+/**
  * Sizes
  */
 const sizes = {
