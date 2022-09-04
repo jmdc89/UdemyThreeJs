@@ -5,7 +5,11 @@ import gsap from 'gsap'
 import * as dat from 'lil-gui'
 
 const parameters = {
-    color: 0xff0000
+    color: 0xff0000,
+    spin: () =>
+    {
+        gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + Math.PI * 2 })
+    }
 }
 
 /**
@@ -27,6 +31,8 @@ const scene = new THREE.Scene()
     {
         material.color.set(parameters.color)
     })
+
+gui.add(parameters, 'spin')
 
 /**
  * Object
