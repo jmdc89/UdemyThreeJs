@@ -4,6 +4,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import gsap from 'gsap'
 import * as dat from 'lil-gui'
 
+const parameters = {
+    color: 0xff0000
+}
+
 /**
  * Base
  */
@@ -17,12 +21,18 @@ const scene = new THREE.Scene()
  * Debug
  */
  const gui = new dat.GUI()
+ gui
+    .addColor(parameters, 'color')
+    .onChange(() =>
+    {
+        material.color.set(parameters.color)
+    })
 
 /**
  * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const material = new THREE.MeshBasicMaterial({ color: parameters.color })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
