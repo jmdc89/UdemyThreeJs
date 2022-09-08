@@ -3,10 +3,10 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 const image = new Image()
-image.onload = () =>
+image.addEventListener('load', () =>
 {
-    console.log('image loaded')
-}
+    const texture = new THREE.Texture(image)
+})
 image.src = '/textures/door/color.jpg'
 
 /**
