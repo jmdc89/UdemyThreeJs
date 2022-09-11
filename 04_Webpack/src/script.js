@@ -58,6 +58,19 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 /**
+ * Objects
+ */
+ const material = new THREE.MeshBasicMaterial()
+
+ const sphere = new THREE.Mesh(
+     new THREE.SphereGeometry(0.5, 16, 16),
+     material
+ )
+ sphere.position.x = - 1.5
+
+
+
+/**
  * Animate
  */
 const clock = new THREE.Clock()
