@@ -68,7 +68,10 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  )
  sphere.position.x = - 1.5
 
-
+ const plane = new THREE.Mesh(
+    new THREE.PlaneGeometry(1, 1),
+    material
+)
 
 /**
  * Animate
