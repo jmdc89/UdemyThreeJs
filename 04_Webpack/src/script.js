@@ -79,6 +79,8 @@ const torus = new THREE.Mesh(
 )
 torus.position.x = 1.5
 
+scene.add(sphere, plane, torus)
+
 /**
  * Animate
  */
