@@ -73,6 +73,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     material
 )
 
+const torus = new THREE.Mesh(
+    new THREE.TorusGeometry(0.3, 0.2, 16, 32),
+    material
+)
+torus.position.x = 1.5
+
 /**
  * Animate
  */
