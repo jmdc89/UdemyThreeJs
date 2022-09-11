@@ -75,7 +75,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Objects
  */
- const material = new THREE.MeshBasicMaterial({ map: doorColorTexture})
+ const material = new THREE.MeshBasicMaterial()
+ material.map = doorColorTexture
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
