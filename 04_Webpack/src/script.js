@@ -69,21 +69,24 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  const doorNormalTexture = textureLoader.load('/textures/door/normal.jpg')
  const doorMetalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
  const doorRoughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
- const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
+ const matcapTexture = textureLoader.load('/textures/matcaps/4.png')
  const gradientTexture = textureLoader.load('/textures/gradients/3.jpg')
 
 /**
  * Objects
  */
 //  const material = new THREE.MeshBasicMaterial()
-const material = new THREE.MeshNormalMaterial()
- material.map = doorColorTexture
+// const material = new THREE.MeshNormalMaterial()
+const material = new THREE.MeshMatcapMaterial()
+//  material.map = doorColorTexture
 
- material.color = new THREE.Color('#ff0000')
-material.color = new THREE.Color('#f00')
-material.color = new THREE.Color('red')
-material.color = new THREE.Color('rgb(255, 0, 0)')
-material.color = new THREE.Color(0xff0000)
+material.matcap = matcapTexture
+
+//  material.color = new THREE.Color('#ff0000')
+// material.color = new THREE.Color('#f00')
+// material.color = new THREE.Color('red')
+// material.color = new THREE.Color('rgb(255, 0, 0)')
+// material.color = new THREE.Color(0xff0000)
 
 // material.wireframe = true
 
@@ -91,7 +94,7 @@ material.transparent = true
 // material.opacity = 0.5
 // material.alphaMap = doorAlphaTexture
 // material.side = THREE.DoubleSide
-material.flatShading = true
+// material.flatShading = true
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
