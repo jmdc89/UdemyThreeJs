@@ -84,6 +84,8 @@ material.color = new THREE.Color('red')
 material.color = new THREE.Color('rgb(255, 0, 0)')
 material.color = new THREE.Color(0xff0000)
 
+material.wireframe = true
+
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
      material
