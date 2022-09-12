@@ -77,10 +77,11 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 //  const material = new THREE.MeshBasicMaterial()
 // const material = new THREE.MeshNormalMaterial()
-const material = new THREE.MeshMatcapMaterial()
+// const material = new THREE.MeshMatcapMaterial()
+const material = new THREE.MeshDepthMaterial()
 //  material.map = doorColorTexture
 
-material.matcap = matcapTexture
+// material.matcap = matcapTexture
 
 //  material.color = new THREE.Color('#ff0000')
 // material.color = new THREE.Color('#f00')
