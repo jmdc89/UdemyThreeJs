@@ -101,7 +101,7 @@ scene.add(pointLight)
 // const material = new THREE.MeshPhongMaterial()
 // const material = new THREE.MeshToonMaterial()
 const material = new THREE.MeshStandardMaterial()
-//  material.map = doorColorTexture
+ material.map = doorColorTexture
 
 // material.matcap = doorColorTexture
 
@@ -154,6 +154,10 @@ const torus = new THREE.Mesh(
 torus.position.x = 1.5
 
 scene.add(sphere, plane, torus)
+
+sphere.geometry.setAttribute('uv2', new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2))
+plane.geometry.setAttribute('uv2', new THREE.BufferAttribute(plane.geometry.attributes.uv.array, 2))
+torus.geometry.setAttribute('uv2', new THREE.BufferAttribute(torus.geometry.attributes.uv.array, 2))
 
 /**
  * Animate
