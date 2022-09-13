@@ -92,7 +92,8 @@ scene.add(pointLight)
 // const material = new THREE.MeshMatcapMaterial()
 // const material = new THREE.MeshDepthMaterial()
 // const material = new THREE.MeshLambertMaterial()
-const material = new THREE.MeshPhongMaterial()
+// const material = new THREE.MeshPhongMaterial()
+const material = new THREE.MeshToonMaterial()
 //  material.map = doorColorTexture
 
 // material.matcap = doorColorTexture
@@ -114,8 +115,13 @@ const material = new THREE.MeshPhongMaterial()
 /**
  *MeshPhongMaterial properties
  */
-material.shininess = 100
-material.specular = new THREE.Color(0x1188ff)
+// material.shininess = 100
+// material.specular = new THREE.Color(0x1188ff)
+
+material.gradientMap = gradientTexture
+gradientTexture.minFilter = THREE.NearestFilter
+gradientTexture.magFilter = THREE.NearestFilter
+gradientTexture.generateMipmaps = false
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
