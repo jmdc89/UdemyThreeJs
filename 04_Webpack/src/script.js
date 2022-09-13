@@ -91,7 +91,8 @@ scene.add(pointLight)
 // const material = new THREE.MeshNormalMaterial()
 // const material = new THREE.MeshMatcapMaterial()
 // const material = new THREE.MeshDepthMaterial()
-const material = new THREE.MeshLambertMaterial()
+// const material = new THREE.MeshLambertMaterial()
+const material = new THREE.MeshPhongMaterial()
 //  material.map = doorColorTexture
 
 // material.matcap = doorColorTexture
