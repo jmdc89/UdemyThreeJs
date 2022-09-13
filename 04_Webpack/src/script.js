@@ -63,6 +63,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
  scene.add(ambientLight)
 
+ const pointLight = new THREE.PointLight(0xffffff, 0.5)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
+
 /**
  * Textures
  */
@@ -81,11 +87,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Objects
  */
- const material = new THREE.MeshBasicMaterial()
+//  const material = new THREE.MeshBasicMaterial()
 // const material = new THREE.MeshNormalMaterial()
 // const material = new THREE.MeshMatcapMaterial()
 // const material = new THREE.MeshDepthMaterial()
- material.map = doorColorTexture
+const material = new THREE.MeshLambertMaterial()
+//  material.map = doorColorTexture
 
 // material.matcap = doorColorTexture
 
