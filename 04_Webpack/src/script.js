@@ -101,7 +101,7 @@ scene.add(pointLight)
 // const material = new THREE.MeshPhongMaterial()
 // const material = new THREE.MeshToonMaterial()
 const material = new THREE.MeshStandardMaterial()
- material.map = doorColorTexture
+//  material.map = doorColorTexture
 
 // material.matcap = doorColorTexture
 
@@ -130,24 +130,24 @@ material.transparent = true
 // gradientTexture.magFilter = THREE.NearestFilter
 // gradientTexture.generateMipmaps = false
 
-// material.metalness = 0.45
-// material.roughness = 0.65
+material.metalness = 0.7
+material.roughness = 0.2
 
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 
-material.aoMap = doorAmbientOcclusionTexture
-material.aoMapIntensity = 1
-material.displacementMap = doorHeightTexture
+// material.aoMap = doorAmbientOcclusionTexture
+// material.aoMapIntensity = 1
+// material.displacementMap = doorHeightTexture
 
-material.displacementScale = 0.05
+// material.displacementScale = 0.05
 
-material.metalnessMap = doorMetalnessTexture
-material.roughnessMap = doorRoughnessTexture
+// material.metalnessMap = doorMetalnessTexture
+// material.roughnessMap = doorRoughnessTexture
 
-material.normalMap = doorNormalTexture
-material.normalScale.set(0.5, 0.5)
-material.alphaMap = doorAlphaTexture
+// material.normalMap = doorNormalTexture
+// material.normalScale.set(0.5, 0.5)
+// material.alphaMap = doorAlphaTexture
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 64, 64),
