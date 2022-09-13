@@ -75,6 +75,17 @@ pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
 
+const cubeTextureLoader = new THREE.CubeTextureLoader()
+
+const environmentMapTexture = cubeTextureLoader.load([
+    '/textures/environmentMaps/0/px.jpg',
+    '/textures/environmentMaps/0/nx.jpg',
+    '/textures/environmentMaps/0/py.jpg',
+    '/textures/environmentMaps/0/ny.jpg',
+    '/textures/environmentMaps/0/pz.jpg',
+    '/textures/environmentMaps/0/nz.jpg'
+])
+
 /**
  * Textures
  */
@@ -148,6 +159,8 @@ gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 // material.normalMap = doorNormalTexture
 // material.normalScale.set(0.5, 0.5)
 // material.alphaMap = doorAlphaTexture
+
+material.envMap = environmentMapTexture
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 64, 64),
