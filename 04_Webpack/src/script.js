@@ -75,13 +75,13 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Objects
  */
-//  const material = new THREE.MeshBasicMaterial()
+ const material = new THREE.MeshBasicMaterial()
 // const material = new THREE.MeshNormalMaterial()
 // const material = new THREE.MeshMatcapMaterial()
-const material = new THREE.MeshDepthMaterial()
-//  material.map = doorColorTexture
+// const material = new THREE.MeshDepthMaterial()
+ material.map = doorColorTexture
 
-// material.matcap = matcapTexture
+// material.matcap = doorColorTexture
 
 //  material.color = new THREE.Color('#ff0000')
 // material.color = new THREE.Color('#f00')
@@ -91,9 +91,9 @@ const material = new THREE.MeshDepthMaterial()
 
 // material.wireframe = true
 
-material.transparent = true
+// material.transparent = true
 // material.opacity = 0.5
-// material.alphaMap = doorAlphaTexture
+// material.alphaMap = doorColorTexture
 // material.side = THREE.DoubleSide
 // material.flatShading = true
 
