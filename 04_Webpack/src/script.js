@@ -136,6 +136,9 @@ material.roughness = 0.65
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 
+material.aoMap = doorAmbientOcclusionTexture
+material.aoMapIntensity = 1
+
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
      material
