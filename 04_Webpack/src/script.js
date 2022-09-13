@@ -113,7 +113,7 @@ const material = new THREE.MeshStandardMaterial()
 
 // material.wireframe = true
 
-// material.transparent = true
+material.transparent = true
 // material.opacity = 0.5
 // material.alphaMap = doorColorTexture
 // material.side = THREE.DoubleSide
@@ -146,6 +146,8 @@ material.metalnessMap = doorMetalnessTexture
 material.roughnessMap = doorRoughnessTexture
 
 material.normalMap = doorNormalTexture
+material.normalScale.set(0.5, 0.5)
+material.alphaMap = doorAlphaTexture
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 64, 64),
