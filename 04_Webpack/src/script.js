@@ -130,8 +130,8 @@ const material = new THREE.MeshStandardMaterial()
 // gradientTexture.magFilter = THREE.NearestFilter
 // gradientTexture.generateMipmaps = false
 
-material.metalness = 0.45
-material.roughness = 0.65
+// material.metalness = 0.45
+// material.roughness = 0.65
 
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
@@ -141,6 +141,11 @@ material.aoMapIntensity = 1
 material.displacementMap = doorHeightTexture
 
 material.displacementScale = 0.05
+
+material.metalnessMap = doorMetalnessTexture
+material.roughnessMap = doorRoughnessTexture
+
+material.normalMap = doorNormalTexture
 
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 64, 64),
