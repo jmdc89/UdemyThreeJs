@@ -111,6 +111,12 @@ const material = new THREE.MeshPhongMaterial()
 // material.side = THREE.DoubleSide
 // material.flatShading = true
 
+/**
+ *MeshPhongMaterial properties
+ */
+material.shininess = 100
+material.specular = new THREE.Color(0x1188ff)
+
  const sphere = new THREE.Mesh(
      new THREE.SphereGeometry(0.5, 16, 16),
      material
