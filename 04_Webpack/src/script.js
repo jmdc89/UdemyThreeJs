@@ -55,19 +55,28 @@ const sizes = {
                 font: font,
                 size: 0.5,
                 height: 0.2,
-                curveSegments: 12,
+                curveSegments: 3,
                 bevelEnabled: true,
                 bevelThickness: 0.03,
                 bevelSize: 0.02,
                 bevelOffset: 0,
-                bevelSegments: 5
+                bevelSegments: 3
             }
          )
          const textMaterial = new THREE.MeshBasicMaterial({wireframe:true})
          const text = new THREE.Mesh(textGeometry, textMaterial)
+         textGeometry.computeBoundingBox()
+         textGeometry.translate(
+            - (textGeometry.boundingBox.max.x - 0.02) * 0.5, // Subtract bevel size
+            - (textGeometry.boundingBox.max.y - 0.02) * 0.5, // Subtract bevel size
+            - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
+        )
          scene.add(text)
+
      }
  )
+
+
 
 window.addEventListener('resize', () =>
 {
