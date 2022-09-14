@@ -21,7 +21,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-
+const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
 /**
  * Object
  */
@@ -63,7 +63,7 @@ const sizes = {
                 bevelSegments: 3
             }
          )
-         const textMaterial = new THREE.MeshBasicMaterial({wireframe:true})
+         const textMaterial = new THREE.MeshMatcapMaterial({matcap: matcapTexture})
          const text = new THREE.Mesh(textGeometry, textMaterial)
         //  textGeometry.computeBoundingBox()
         //  textGeometry.translate(
