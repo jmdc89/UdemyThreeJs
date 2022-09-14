@@ -39,6 +39,19 @@ const sizes = {
     height: window.innerHeight
 }
 
+/**
+ * Fonts
+ */
+ const fontLoader = new FontLoader()
+
+ fontLoader.load(
+     '/fonts/helvetiker_regular.typeface.json',
+     (font) =>
+     {
+         console.log('loaded')
+     }
+ )
+
 window.addEventListener('resize', () =>
 {
     // Update sizes
