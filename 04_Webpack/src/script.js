@@ -24,7 +24,9 @@ scene.add(ambientLight)
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
 
 const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.3)
+directionalLight.position.set(1,0.25,0)
 scene.add(directionalLight)
+
 // const pointLight = new THREE.PointLight(0xffffff, 0.5)
 // pointLight.position.x = 2
 // pointLight.position.y = 3
