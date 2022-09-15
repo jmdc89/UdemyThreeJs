@@ -34,6 +34,9 @@ const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2)
 pointLight.position.set(1, -0.5, 1)
 scene.add(pointLight)
 
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1)
+scene.add(rectAreaLight)
+
 // const pointLight = new THREE.PointLight(0xffffff, 0.5)
 // pointLight.position.x = 2
 // pointLight.position.y = 3
@@ -49,7 +52,7 @@ material.roughness = 0.4
 
 // Objects
 const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.5, 32, 32),
+    new THREE.SphereGeometry(0.3, 32, 32),
     material
 )
 sphere.position.x = - 1.5
