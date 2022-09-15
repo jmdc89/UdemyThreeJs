@@ -41,6 +41,8 @@ scene.add(rectAreaLight)
 
 const spotLight = new THREE.SpotLight(0x78ff00, 0.5, 10, Math.PI * 0.1, 0.25, 1)
 spotLight.position.set(0, 2, 3)
+spotLight.target.position.x = - 0.75
+scene.add(spotLight.target)
 scene.add(spotLight)
 
 // const pointLight = new THREE.PointLight(0xffffff, 0.5)
