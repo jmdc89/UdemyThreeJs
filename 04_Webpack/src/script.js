@@ -45,6 +45,22 @@ spotLight.target.position.x = - 0.75
 scene.add(spotLight.target)
 scene.add(spotLight)
 
+const hemisphereLightHelper = new THREE.HemisphereLightHelper(hemisphereLight, 0.2)
+scene.add(hemisphereLightHelper)
+
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
+scene.add(directionalLightHelper)
+
+const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2)
+scene.add(pointLightHelper)
+
+const spotLightHelper = new THREE.SpotLightHelper(spotLight)
+scene.add(spotLightHelper)
+window.requestAnimationFrame(() =>
+{
+    spotLightHelper.update()
+})
+
 // const pointLight = new THREE.PointLight(0xffffff, 0.5)
 // pointLight.position.x = 2
 // pointLight.position.y = 3
