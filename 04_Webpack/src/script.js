@@ -92,6 +92,12 @@ gui.add(material, 'metalness').min(0).max(1).step(0.001)
 gui.add(material, 'roughness').min(0).max(1).step(0.001)
 
 /**
+ * Textures
+ */
+ const textureLoader = new THREE.TextureLoader()
+ const bakedShadow = textureLoader.load('/textures/bakedShadow.jpg')
+
+ /**
  * Objects
  */
 const sphere = new THREE.Mesh(
@@ -157,6 +163,7 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
+renderer.shadowMap.enabled = false
 
 /**
  * Animate
