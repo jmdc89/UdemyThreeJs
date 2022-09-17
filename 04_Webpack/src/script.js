@@ -96,7 +96,8 @@ gui.add(material, 'roughness').min(0).max(1).step(0.001)
  */
  const textureLoader = new THREE.TextureLoader()
  const bakedShadow = textureLoader.load('/textures/bakedShadow.jpg')
-
+ const simpleShadow = textureLoader.load('/textures/simpleShadow.jpg')
+ 
  /**
  * Objects
  */
@@ -108,15 +109,27 @@ sphere.castShadow = true
 
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
-    new THREE.MeshBasicMaterial({
-        map: bakedShadow
-    })
+    // new THREE.MeshBasicMaterial({
+    //     map: bakedShadow
+    // })
+    material
 )
 plane.rotation.x = - Math.PI * 0.5
 plane.position.y = - 0.5
 plane.receiveShadow = true
 
-scene.add(sphere, plane)
+const sphereShadow = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.5, 1.5),
+    new THREE.MeshBasicMaterial({
+        color: 0x000000,
+        transparent: true,
+        alphaMap: simpleShadow
+    })
+)
+sphereShadow.rotation.x = - Math.PI * 0.5
+sphereShadow.position.y = plane.position.y + 0.01
+
+scene.add(sphere, sphereShadow, plane)
 
 /**
  * Sizes
