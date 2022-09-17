@@ -30,6 +30,8 @@ directionalLight.position.set(2, 2, - 1)
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.width = 1024
 directionalLight.shadow.mapSize.height = 1024
+directionalLight.shadow.camera.near = 1
+directionalLight.shadow.camera.far = 6
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.001)
 gui.add(directionalLight.position, 'x').min(- 5).max(5).step(0.001)
 gui.add(directionalLight.position, 'y').min(- 5).max(5).step(0.001)
