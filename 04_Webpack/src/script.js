@@ -134,6 +134,12 @@ doorLight.position.set(0, 2.2, 2.7)
 house.add(doorLight)
 
 /**
+ * Fog
+ */
+ const fog = new THREE.Fog('#262837', 1, 15)
+ scene.fog = fog
+
+/**
  * Sizes
  */
 const sizes = {
