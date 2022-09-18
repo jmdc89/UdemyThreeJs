@@ -43,6 +43,15 @@ roof.rotation.y = Math.PI * 0.25
 roof.position.y = 2.5 + 0.5
 house.add(roof)
 
+// Door
+const door = new THREE.Mesh(
+    new THREE.PlaneGeometry(2, 2),
+    new THREE.MeshStandardMaterial({ color: '#aa7b7b'})
+)
+door.position.y = 1
+door.position.z = 2 + 0.01
+house.add(door)
+
 // Floor
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
