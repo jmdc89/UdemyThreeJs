@@ -23,13 +23,8 @@ const textureLoader = new THREE.TextureLoader()
 /**
  * House
  */
-// Temporary sphere
-const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 32, 32),
-    new THREE.MeshStandardMaterial({ roughness: 0.7 })
-)
-sphere.position.y = 1
-scene.add(sphere)
+const house = new THREE.Group()
+scene.add(house)
 
 // Floor
 const floor = new THREE.Mesh(
