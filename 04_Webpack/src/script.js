@@ -21,10 +21,13 @@ const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
 
 // Material
-const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.02,
-    sizeAttenuation: true
-})
+// const particlesMaterial = new THREE.PointsMaterial({
+//     size: 0.02,
+//     sizeAttenuation: true
+// })
+const particlesMaterial = new THREE.PointsMaterial()
+particlesMaterial.size = 0.02
+particlesMaterial.sizeAttenuation = true
 
 /**
  * Sizes
