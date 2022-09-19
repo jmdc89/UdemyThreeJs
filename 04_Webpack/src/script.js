@@ -33,8 +33,18 @@ particlesMaterial.color = new THREE.Color('#ff88cc')
 // particlesMaterial.map = particleTexture
 particlesMaterial.transparent = true
 particlesMaterial.alphaMap = particleTexture
+// particlesMaterial.alphaTest = 0.001
+particlesMaterial.depthTest = false
 
 // Geometry
+
+const cube = new THREE.Mesh(
+    new THREE.BoxGeometry(),
+    new THREE.MeshBasicMaterial()
+)
+scene.add(cube)
+
+
 const particlesGeometry = new THREE.BufferGeometry()
 const count = 5000
 
