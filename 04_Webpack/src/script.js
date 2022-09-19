@@ -120,6 +120,9 @@ const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
 
+    // Update particles
+    particles.rotation.y = elapsedTime * 0.2
+
     // Update controls
     controls.update()
 
