@@ -16,13 +16,29 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
- * Test cube
+ * Galaxy
  */
-const cube = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshBasicMaterial()
-)
-scene.add(cube)
+
+const parameters = {}
+parameters.count = 1000
+
+const generateGalaxy = () =>
+{
+     /**
+     * Geometry
+     */
+    const geometry = new THREE.BufferGeometry()
+
+    const positions = new Float32Array(parameters.count * 3)
+
+    for(let i = 0; i < parameters.count; i++)
+    {
+        
+    }
+}
+
+generateGalaxy()
+
 
 /**
  * Sizes
