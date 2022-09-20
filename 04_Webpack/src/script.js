@@ -21,6 +21,7 @@ const scene = new THREE.Scene()
 
 const parameters = {}
 parameters.count = 1000
+parameters.size = 0.02
 
 const generateGalaxy = () =>
 {
@@ -51,6 +52,12 @@ const generateGalaxy = () =>
         depthWrite: false,
         blending: THREE.AdditiveBlending
     })
+
+     /**
+     * Points
+     */
+      const points = new THREE.Points(geometry, material)
+      scene.add(points)
 }
 
 generateGalaxy()
