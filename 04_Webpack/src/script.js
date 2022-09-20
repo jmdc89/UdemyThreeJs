@@ -33,8 +33,24 @@ const generateGalaxy = () =>
 
     for(let i = 0; i < parameters.count; i++)
     {
-        
+        const i3 = i * 3
+
+        positions[i3    ] = (Math.random() - 0.5) * 3
+        positions[i3 + 1] = (Math.random() - 0.5) * 3
+        positions[i3 + 2] = (Math.random() - 0.5) * 3
     }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+
+    /**
+     * Material
+     */
+     const material = new THREE.PointsMaterial({
+        size: parameters.size,
+        sizeAttenuation: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+    })
 }
 
 generateGalaxy()
