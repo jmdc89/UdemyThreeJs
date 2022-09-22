@@ -146,6 +146,24 @@ const tick = () =>
     //     intersect.object.material.color.set('#0000ff')
     // }
 
+    raycaster.setFromCamera(mouse, camera)
+    
+    const objectsToTest = [object1, object2, object3]
+    const intersects = raycaster.intersectObjects(objectsToTest)
+    
+    for(const intersect of intersects)
+    {
+        intersect.object.material.color.set('#0000ff')
+    }
+
+    for(const object of objectsToTest)
+    {
+        if(!intersects.find(intersect => intersect.object === object))
+        {
+            object.material.color.set('#ff0000')
+        }
+    }
+
     // Update controls
     controls.update()
 
