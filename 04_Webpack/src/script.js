@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import * as dat from 'lil-gui'
+import { MeshStandardMaterial } from 'three'
 
 /**
  * Debug
@@ -13,8 +14,12 @@ const parameters = {
 
 gui
     .addColor(parameters, 'materialColor')
+    .onChange(() =>
+    {
+        material.color.set(parameters.materialColor)
+    })
 
-/**
+    /**
  * Base
  */
 // Canvas
