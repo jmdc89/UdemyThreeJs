@@ -102,10 +102,15 @@ window.addEventListener('resize', () =>
 /**
  * Camera
  */
+
+// Group
+const cameraGroup = new THREE.Group()
+scene.add(cameraGroup)
+
 // Base camera
 const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
 camera.position.z = 6
-scene.add(camera)
+cameraGroup.add(camera)
 
 /**
  * Scroll
@@ -128,7 +133,6 @@ scene.add(camera)
     cursor.x = event.clientX / sizes.width - 0.5
     cursor.y = event.clientY / sizes.height - 0.5
 
-    console.log(cursor)
 })
 
 /**
@@ -153,6 +157,12 @@ const tick = () =>
 
     // Animate camera
     camera.position.y = - scrollY / sizes.height * objectsDistance
+
+    const parallaxX = cursor.x
+    const parallaxY = - cursor.y
+
+    cameraGroup.position.x = parallaxX
+    cameraGroup.position.y = parallaxY
 
     // Render
     renderer.render(scene, camera)
