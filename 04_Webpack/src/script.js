@@ -145,9 +145,19 @@ cameraGroup.add(camera)
  * Scroll
  */
  let scrollY = window.scrollY
+ let currentSection = 0
  window.addEventListener('scroll', () =>
 {
     scrollY = window.scrollY
+
+    const newSection = Math.round(scrollY / sizes.height)
+
+    if(newSection != currentSection)
+    {
+        currentSection = newSection
+
+        console.log('changed', currentSection)
+    }
 })
 
 /**
