@@ -69,6 +69,8 @@ mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1
 mesh3.position.y = - objectsDistance * 2
 
+const sectionMeshes = [mesh1, mesh2, mesh3]
+
 scene.add(mesh1, mesh2, mesh3)
 
 /**
@@ -124,6 +126,13 @@ const tick = () =>
 
     // Render
     renderer.render(scene, camera)
+
+    // Animate meshes
+    for(const mesh of sectionMeshes)
+    {
+        mesh.rotation.x = elapsedTime * 0.1
+        mesh.rotation.y = elapsedTime * 0.12
+    }
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
