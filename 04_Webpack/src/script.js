@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import * as dat from 'lil-gui'
 import { MeshStandardMaterial } from 'three'
+import gsap from 'gsap'
 
 /**
  * Debug
@@ -157,6 +158,17 @@ cameraGroup.add(camera)
         currentSection = newSection
 
         console.log('changed', currentSection)
+    
+        gsap.to(
+            sectionMeshes[currentSection].rotation,
+            {
+                duration: 1.5,
+                ease: 'power2.inOut',
+                x: '+=6',
+                y: '+=3'
+            }
+        )
+    
     }
 })
 
