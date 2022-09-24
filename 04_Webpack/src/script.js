@@ -46,6 +46,12 @@ const material = new THREE.MeshToonMaterial({
     gradientMap: gradientTexture
 })
 
+const particlesMaterial = new THREE.PointsMaterial({
+    color: parameters.materialColor,
+    sizeAttenuation: true,
+    size: 0.03
+})
+
 /**
  * Particles
  */
@@ -62,6 +68,10 @@ for(let i = 0; i < particlesCount; i++)
 
 const particlesGeometry = new THREE.BufferGeometry()
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+
+// Points
+const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+scene.add(particles)
 
 /**
  * Objects
