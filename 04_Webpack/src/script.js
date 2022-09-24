@@ -47,6 +47,23 @@ const material = new THREE.MeshToonMaterial({
 })
 
 /**
+ * Particles
+ */
+// Geometry
+const particlesCount = 200
+const positions = new Float32Array(particlesCount * 3)
+
+for(let i = 0; i < particlesCount; i++)
+{
+    positions[i * 3 + 0] = Math.random()
+    positions[i * 3 + 1] = Math.random()
+    positions[i * 3 + 2] = Math.random()
+}
+
+const particlesGeometry = new THREE.BufferGeometry()
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+
+/**
  * Objects
  */
 // Meshes
