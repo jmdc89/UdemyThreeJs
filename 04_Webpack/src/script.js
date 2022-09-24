@@ -63,6 +63,12 @@ const mesh3 = new THREE.Mesh(
     material
 )
 
+const objectsDistance = 4
+
+mesh1.position.y = - objectsDistance * 0
+mesh2.position.y = - objectsDistance * 1
+mesh3.position.y = - objectsDistance * 2
+
 scene.add(mesh1, mesh2, mesh3)
 
 /**
