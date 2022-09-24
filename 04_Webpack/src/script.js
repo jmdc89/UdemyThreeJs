@@ -23,6 +23,13 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+/**
+ * Lights
+ */
+ const directionalLight = new THREE.DirectionalLight('#ffffff', 1)
+ directionalLight.position.set(1, 1, 0)
+ scene.add(directionalLight)
+
 // Material
 const material = new THREE.MeshToonMaterial({ color: parameters.materialColor })
 
