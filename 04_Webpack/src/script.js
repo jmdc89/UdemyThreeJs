@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'lil-gui'
+import CANNON from 'cannon'
 
 /**
  * Debug
@@ -81,6 +82,12 @@ directionalLight.shadow.camera.right = 7
 directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(5, 5, 5)
 scene.add(directionalLight)
+
+/**
+ * Physics
+ */
+ const world = new CANNON.World()
+ world.gravity.set(0, - 9.82, 0)
 
 /**
  * Sizes
