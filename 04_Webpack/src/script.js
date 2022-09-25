@@ -99,6 +99,12 @@ scene.add(directionalLight)
 
 world.addBody(sphereBody)
 
+const floorShape = new CANNON.Plane()
+const floorBody = new CANNON.Body()
+floorBody.mass = 0
+floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(- 1, 0, 0), Math.PI * 0.5) 
+floorBody.addShape(floorShape)
+world.addBody(floorBody)
 
 /**
  * Sizes
@@ -164,7 +170,7 @@ const tick = () =>
     // Update physics
     world.step(1 / 60, deltaTime, 3)
     sphere.position.copy(sphereBody.position)
-    
+
     // Render
     renderer.render(scene, camera)
 
