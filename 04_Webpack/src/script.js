@@ -157,10 +157,14 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
     const deltaTime = elapsedTime - oldElapsedTime
     oldElapsedTime = elapsedTime
-    
+
     // Update controls
     controls.update()
 
+    // Update physics
+    world.step(1 / 60, deltaTime, 3)
+    sphere.position.copy(sphereBody.position)
+    
     // Render
     renderer.render(scene, camera)
 
