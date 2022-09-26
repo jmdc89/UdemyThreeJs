@@ -89,17 +89,16 @@ scene.add(directionalLight)
  const world = new CANNON.World()
  world.gravity.set(0, - 9.82, 0)
 
- const concreteMaterial = new CANNON.Material('concrete')
-const plasticMaterial = new CANNON.Material('plastic')
-const concretePlasticContactMaterial = new CANNON.ContactMaterial(
-    concreteMaterial,
-    plasticMaterial,
-    {
-        friction: 0.1,
-        restitution: 0.7
-    }
-)
-world.addContactMaterial(concretePlasticContactMaterial)
+ const defaultMaterial = new CANNON.Material('default')
+ const defaultContactMaterial = new CANNON.ContactMaterial(
+     defaultMaterial,
+     defaultMaterial,
+     {
+         friction: 0.1,
+         restitution: 0.7
+     }
+ )
+ world.addContactMaterial(defaultContactMaterial)
 
  const sphereShape = new CANNON.Sphere(0.5)
 
@@ -107,7 +106,7 @@ world.addContactMaterial(concretePlasticContactMaterial)
     mass: 1,
     position: new CANNON.Vec3(0, 3, 0),
     shape: sphereShape,
-    material: plasticMaterial
+    material: defaultMaterial
 })
 
 world.addBody(sphereBody)
@@ -116,7 +115,7 @@ const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
 floorBody.mass = 0
 floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(- 1, 0, 0), Math.PI * 0.5) 
-floorBody.material = concreteMaterial
+floorBody.material = defaultMaterial
 floorBody.addShape(floorShape)
 world.addBody(floorBody)
 
