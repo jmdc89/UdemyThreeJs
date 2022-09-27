@@ -8,6 +8,7 @@ import CANNON from 'cannon'
  * Debug
  */
 const gui = new dat.GUI()
+const  debugObject = {}
 
 /**
  * Base
@@ -155,6 +156,14 @@ scene.add(directionalLight)
  }
 
 createSphere(0.5, { x: 0, y: 3, z: 0 })
+
+debugObject.createSphere = () =>
+{
+    createSphere(0.5, { x: 0, y: 3, z: 0 })
+}
+
+gui.add(debugObject, 'createSphere')
+
 
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
