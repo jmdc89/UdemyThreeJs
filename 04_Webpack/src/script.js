@@ -159,7 +159,14 @@ createSphere(0.5, { x: 0, y: 3, z: 0 })
 
 debugObject.createSphere = () =>
 {
-    createSphere(0.5, { x: 0, y: 3, z: 0 })
+    createSphere(
+        Math.random() * 1, 
+        { 
+            x: (Math.random() - 0.5) * 3,
+            y: 3,
+            z: (Math.random() - 0.5) * 3
+        }
+    )
 }
 
 gui.add(debugObject, 'createSphere')
