@@ -228,7 +228,10 @@ const tick = () =>
     // Update physics
     // sphereBody.applyForce(new CANNON.Vec3(- 0.5, 0, 0), sphereBody.position)
     world.step(1 / 60, deltaTime, 3)
-    // sphere.position.copy(sphereBody.position)
+    for(const object of objectsToUpdate)
+    {
+        object.mesh.position.copy(object.body.position)
+    }
 
     // Render
     renderer.render(scene, camera)
