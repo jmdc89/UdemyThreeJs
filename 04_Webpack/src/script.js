@@ -146,6 +146,8 @@ scene.add(directionalLight)
     world.addBody(body)
  }
 
+createSphere(0.5, { x: 0, y: 3, z: 0 })
+
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
 floorBody.mass = 0
