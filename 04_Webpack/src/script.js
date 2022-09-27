@@ -114,6 +114,38 @@ scene.add(directionalLight)
 
 // world.addBody(sphereBody)
 
+/**
+ * Utils
+ */
+ const createSphere = (radius, position) =>
+ {
+    // Three.js mesh
+    const mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(radius, 20, 20),
+        new THREE.MeshStandardMaterial({
+            metalness: 0.3,
+            roughness: 0.4,
+            envMap: environmentMapTexture,
+            envMapIntensity: 0.5
+        })
+    )
+    mesh.castShadow = true
+    mesh.position.copy(position)
+    scene.add(mesh)
+
+    // Cannon.js body
+    const shape = new CANNON.Sphere(radius)
+
+    const body = new CANNON.Body({
+        mass: 1,
+        position: new CANNON.Vec3(0, 3, 0),
+        shape: shape,
+        material: defaultMaterial
+    })
+    body.position.copy(position)
+    world.addBody(body)
+ }
+
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
 floorBody.mass = 0
