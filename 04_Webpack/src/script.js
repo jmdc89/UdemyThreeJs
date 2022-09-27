@@ -36,18 +36,18 @@ const environmentMapTexture = cubeTextureLoader.load([
 /**
  * Test sphere
  */
-const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.5, 32, 32),
-    new THREE.MeshStandardMaterial({
-        metalness: 0.3,
-        roughness: 0.4,
-        envMap: environmentMapTexture,
-        envMapIntensity: 0.5
-    })
-)
-sphere.castShadow = true
-sphere.position.y = 0.5
-scene.add(sphere)
+// const sphere = new THREE.Mesh(
+//     new THREE.SphereGeometry(0.5, 32, 32),
+//     new THREE.MeshStandardMaterial({
+//         metalness: 0.3,
+//         roughness: 0.4,
+//         envMap: environmentMapTexture,
+//         envMapIntensity: 0.5
+//     })
+// )
+// sphere.castShadow = true
+// sphere.position.y = 0.5
+// scene.add(sphere)
 
 /**
  * Floor
@@ -101,18 +101,18 @@ scene.add(directionalLight)
  world.addContactMaterial(defaultContactMaterial)
  world.defaultContactMaterial = defaultContactMaterial
 
- const sphereShape = new CANNON.Sphere(0.5)
+//  const sphereShape = new CANNON.Sphere(0.5)
 
- const sphereBody = new CANNON.Body({
-    mass: 1,
-    position: new CANNON.Vec3(0, 3, 0),
-    shape: sphereShape,
-    // material: defaultMaterial
-})
+//  const sphereBody = new CANNON.Body({
+//     mass: 1,
+//     position: new CANNON.Vec3(0, 3, 0),
+//     shape: sphereShape,
+//     // material: defaultMaterial
+// })
 
-sphereBody.applyLocalForce(new CANNON.Vec3(150, 0, 0), new CANNON.Vec3(0, 0, 0))
+// sphereBody.applyLocalForce(new CANNON.Vec3(150, 0, 0), new CANNON.Vec3(0, 0, 0))
 
-world.addBody(sphereBody)
+// world.addBody(sphereBody)
 
 const floorShape = new CANNON.Plane()
 const floorBody = new CANNON.Body()
@@ -184,9 +184,9 @@ const tick = () =>
     controls.update()
 
     // Update physics
-    sphereBody.applyForce(new CANNON.Vec3(- 0.5, 0, 0), sphereBody.position)
-
+    // sphereBody.applyForce(new CANNON.Vec3(- 0.5, 0, 0), sphereBody.position)
     world.step(1 / 60, deltaTime, 3)
+    // sphere.position.copy(sphereBody.position)
 
     // Render
     renderer.render(scene, camera)
