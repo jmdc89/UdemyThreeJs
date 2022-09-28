@@ -120,18 +120,24 @@ scene.add(directionalLight)
  */
 
  const objectsToUpdate = []
+ const sphereGeometry = new THREE.SphereGeometry(1, 20, 20)
+const sphereMaterial = new THREE.MeshStandardMaterial({
+    metalness: 0.3,
+    roughness: 0.4,
+    envMap: environmentMapTexture,
+    envMapIntensity: 0.5
+})
+
  const createSphere = (radius, position) =>
  {
     // Three.js mesh
-    const mesh = new THREE.Mesh(
-        new THREE.SphereGeometry(radius, 20, 20),
-        new THREE.MeshStandardMaterial({
-            metalness: 0.3,
-            roughness: 0.4,
-            envMap: environmentMapTexture,
-            envMapIntensity: 0.5
-        })
-    )
+    // Three.js mesh
+    const mesh = new THREE.Mesh(sphereGeometry, sphereMaterial)
+    mesh.castShadow = true
+    mesh.scale.set(radius, radius, radius)
+    mesh.position.copy(position)
+    scene.add(mesh)
+    
     mesh.castShadow = true
     mesh.position.copy(position)
     scene.add(mesh)
@@ -160,7 +166,7 @@ createSphere(0.5, { x: 0, y: 3, z: 0 })
 debugObject.createSphere = () =>
 {
     createSphere(
-        Math.random() * 1, 
+        Math.random() * y, 
         { 
             x: (Math.random() - 0.5) * 3,
             y: 3,
