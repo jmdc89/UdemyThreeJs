@@ -90,7 +90,8 @@ scene.add(directionalLight)
  const world = new CANNON.World()
  world.gravity.set(0, - 9.82, 0)
  world.broadphase = new CANNON.SAPBroadphase(world)
-
+ world.allowSleep = true
+ 
  const defaultMaterial = new CANNON.Material('default')
  const defaultContactMaterial = new CANNON.ContactMaterial(
      defaultMaterial,
