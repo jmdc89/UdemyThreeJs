@@ -253,6 +253,23 @@ floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(- 1, 0, 0), Math.PI * 0.5)
 floorBody.addShape(floorShape)
 world.addBody(floorBody)
 
+debugObject.reset = () =>
+{
+    for(const object of objectsToUpdate)
+    {
+        // Remove body
+        object.body.removeEventListener('collide', playHitSound)
+        world.removeBody(object.body)
+
+        // Remove mesh
+        scene.remove(object.mesh)
+
+        objectsToUpdate.splice(0, objectsToUpdate.length)
+    }
+}
+
+gui.add(debugObject, 'reset')
+
 
 /**
  * Sizes
