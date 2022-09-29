@@ -128,6 +128,7 @@ scene.add(directionalLight)
  
      if(impactStrength > 1.5)
      {
+        hitSound.volume = Math.random()
          hitSound.currentTime = 0
          hitSound.play()
      }
