@@ -118,6 +118,17 @@ scene.add(directionalLight)
 // world.addBody(sphereBody)
 
 /**
+ * Sounds
+ */
+ const hitSound = new Audio('/sounds/hit.mp3')
+
+ const playHitSound = () =>
+ {
+     hitSound.play()
+ }
+
+
+/**
  * Utils
  */
 
@@ -201,9 +212,10 @@ const createBox = (width, height, depth, position) =>
         material: defaultMaterial
     })
     body.position.copy(position)
-    world.addBody(body)
 
     body.addEventListener('collide', playHitSound)
+
+    world.addBody(body)
 
     // Save in objects
     objectsToUpdate.push({ mesh, body })
@@ -234,15 +246,6 @@ floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(- 1, 0, 0), Math.PI * 0.5)
 floorBody.addShape(floorShape)
 world.addBody(floorBody)
 
-/**
- * Sounds
- */
- const hitSound = new Audio('/sounds/hit.mp3')
-
- const playHitSound = () =>
- {
-     hitSound.play()
- }
 
 /**
  * Sizes
