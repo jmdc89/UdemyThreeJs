@@ -41,6 +41,8 @@ scene.add(floor)
  const gltfLoader = new GLTFLoader()
  gltfLoader.setDRACOLoader(dracoLoader)
 
+let mixer = null
+
  gltfLoader.load(
     // '/models/Duck/glTF-Draco/Duck.gltf',
         '/models/Fox/glTF/Fox.gltf',
@@ -48,7 +50,8 @@ scene.add(floor)
     {
         gltf.scene.scale.set(0.025, 0.025, 0.025)
         scene.add(gltf.scene)
-        const mixer = new THREE.AnimationMixer(gltf.scene)
+
+        mixer = new THREE.AnimationMixer(gltf.scene)
         const action = mixer.clipAction(gltf.animations[0])
         action.play()
     }
@@ -144,6 +147,11 @@ const tick = () =>
 
     // Update controls
     controls.update()
+
+    if(mixer)
+    {
+        mixer.update(deltaTime)
+    }
 
     // Render
     renderer.render(scene, camera)
