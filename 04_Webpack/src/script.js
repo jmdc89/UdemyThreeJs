@@ -46,7 +46,8 @@ scene.add(floor)
         '/models/Fox/glTF/Fox.gltf',
     (gltf) =>
     {
-        scene.add(gltf.scene.children[0])
+        gltf.scene.scale.set(0.025, 0.025, 0.025)
+        scene.add(gltf.scene)
     }
 )
 
