@@ -35,6 +35,7 @@ scene.add(floor)
 /**
  * Models
  */
+ const dracoLoader = new DRACOLoader()
  const gltfLoader = new GLTFLoader()
 
 //  gltfLoader.load(
