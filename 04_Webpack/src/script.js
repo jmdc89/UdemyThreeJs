@@ -5,6 +5,7 @@ import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
+
 /**
  * Base
  */
@@ -36,27 +37,29 @@ scene.add(floor)
  * Models
  */
  const dracoLoader = new DRACOLoader()
+ dracoLoader.setDecoderPath('/draco/')
  const gltfLoader = new GLTFLoader()
+ gltfLoader.setDRACOLoader(dracoLoader)
 
-//  gltfLoader.load(
-//     '/models/Duck/glTF/Duck.gltf',
-//     (gltf) =>
-//     {
-//         scene.add(gltf.scene.children[0])
-//     }
-// )
-
-gltfLoader.load(
-    '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+ gltfLoader.load(
+    '/models/Duck/glTF-Draco/Duck.gltf',
     (gltf) =>
     {
-        // while(gltf.scene.children.length)
-        // {
-        //     scene.add(gltf.scene.children[0])
-        // }
-        scene.add(gltf.scene)
+        scene.add(gltf.scene.children[0])
     }
 )
+
+// gltfLoader.load(
+//     '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+//     (gltf) =>
+//     {
+//         // while(gltf.scene.children.length)
+//         // {
+//         //     scene.add(gltf.scene.children[0])
+//         // }
+//         scene.add(gltf.scene)
+//     }
+// )
 
 /**
  * Lights
