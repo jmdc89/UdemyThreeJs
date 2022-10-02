@@ -40,18 +40,7 @@ scene.add(floor)
     '/models/Duck/glTF/Duck.gltf',
     (gltf) =>
     {
-        console.log('success')
-        console.log(gltf)
-    },
-    (progress) =>
-    {
-        console.log('progress')
-        console.log(progress)
-    },
-    (error) =>
-    {
-        console.log('error')
-        console.log(error)
+        scene.add(gltf.scene.children[0])
     }
 )
 
