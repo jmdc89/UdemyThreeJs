@@ -42,7 +42,8 @@ scene.add(floor)
  gltfLoader.setDRACOLoader(dracoLoader)
 
  gltfLoader.load(
-    '/models/Duck/glTF-Draco/Duck.gltf',
+    // '/models/Duck/glTF-Draco/Duck.gltf',
+        '/models/Fox/glTF/Fox.gltf',
     (gltf) =>
     {
         scene.add(gltf.scene.children[0])
