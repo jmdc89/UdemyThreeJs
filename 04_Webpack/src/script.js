@@ -36,8 +36,16 @@ scene.add(floor)
  */
  const gltfLoader = new GLTFLoader()
 
- gltfLoader.load(
-    '/models/Duck/glTF/Duck.gltf',
+//  gltfLoader.load(
+//     '/models/Duck/glTF/Duck.gltf',
+//     (gltf) =>
+//     {
+//         scene.add(gltf.scene.children[0])
+//     }
+// )
+
+gltfLoader.load(
+    '/models/FlightHelmet/glTF/FlightHelmet.gltf',
     (gltf) =>
     {
         scene.add(gltf.scene.children[0])
