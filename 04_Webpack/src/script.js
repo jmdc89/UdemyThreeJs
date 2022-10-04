@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'lil-gui'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 /**
  * Base
@@ -23,6 +24,11 @@ const testSphere = new THREE.Mesh(
     new THREE.MeshStandardMaterial()
 )
 scene.add(testSphere)
+
+/**
+ * Loaders
+ */
+ const gltfLoader = new GLTFLoader()
 
 /**
  * Sizes
@@ -56,7 +62,7 @@ camera.position.set(4, 1, - 4)
 scene.add(camera)
 
 // Lights
-const directionalLight = new THREE.DirectionalLight('#ffffff', 1)
+const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(0.25, 3, - 2.25)
 scene.add(directionalLight)
 
