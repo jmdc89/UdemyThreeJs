@@ -52,7 +52,11 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
     '/textures/environmentMaps/0/nz.jpg'
 ])
 
+debugObject.envMapIntensity = 1
+gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001) 
+
 scene.background = environmentMap
+
 
 /**
  * Update all materials
@@ -64,7 +68,10 @@ scene.background = environmentMap
         child.material.envMap = environmentMap
         child.material.envMapIntensity = 2.5
     }
+    
  }
+
+ 
 
 /**
  * Sizes
