@@ -52,6 +52,17 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
 scene.background = environmentMap
 
 /**
+ * Update all materials
+ */
+ const updateAllMaterials = () =>
+ {
+     scene.traverse((child) =>
+     {
+         console.log(child)
+     })
+ }
+
+/**
  * Sizes
  */
 const sizes = {
