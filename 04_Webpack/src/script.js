@@ -30,6 +30,8 @@ const scene = new THREE.Scene()
         gltf.scene.rotation.y = Math.PI * 0.5
         scene.add(gltf.scene)
 
+        updateAllMaterials()
+
         gui.add(gltf.scene.rotation, 'y').min(- Math.PI).max(Math.PI).step(0.001).name('rotation')
     }
 )
@@ -56,10 +58,10 @@ scene.background = environmentMap
  */
  const updateAllMaterials = () =>
  {
-     scene.traverse((child) =>
-     {
-         console.log(child)
-     })
+    if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
+    {
+        console.log(child)
+    }
  }
 
 /**
