@@ -49,6 +49,8 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
     '/textures/environmentMaps/0/nz.jpg'
 ])
 
+scene.background = environmentMap
+
 /**
  * Sizes
  */
