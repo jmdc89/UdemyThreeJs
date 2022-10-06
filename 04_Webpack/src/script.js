@@ -129,6 +129,7 @@ directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
 directionalLight.shadow.camera.far = 15
 // scene.add(directionalLightCameraHelper)
+directionalLight.shadow.normalBias = 0.05
 scene.add(directionalLight)
 
 
