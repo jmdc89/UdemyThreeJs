@@ -69,6 +69,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
 ])
 
 scene.background = environmentMap
+scene.environment = environmentMap
 
 debugObject.envMapIntensity = 2.5
 gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(updateAllMaterials)
@@ -127,7 +128,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.physicallyCorrectLights = true
-
+renderer.outputEncoding = THREE.sRGBEncoding
 
 /**
  * Animate
