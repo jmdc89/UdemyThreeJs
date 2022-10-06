@@ -22,18 +22,30 @@ const scene = new THREE.Scene()
  */
  const gltfLoader = new GLTFLoader()
 
- gltfLoader.load(
-    '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+//  gltfLoader.load(
+//     '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+//     (gltf) =>
+//     {
+//         gltf.scene.scale.set(10, 10, 10)
+//         gltf.scene.position.set(0, - 4, 0)
+//         gltf.scene.rotation.y = Math.PI * 0.5
+//         scene.add(gltf.scene)
+
+//         updateAllMaterials()
+
+//         gui.add(gltf.scene.rotation, 'y').min(- Math.PI).max(Math.PI).step(0.001).name('rotation')
+//     }
+// )
+
+gltfLoader.load(
+    '/models/hamburger.glb',
     (gltf) =>
     {
-        gltf.scene.scale.set(10, 10, 10)
-        gltf.scene.position.set(0, - 4, 0)
-        gltf.scene.rotation.y = Math.PI * 0.5
+        gltf.scene.scale.set(0.3, 0.3, 0.3)
+        gltf.scene.position.set(0, - 1, 0)
         scene.add(gltf.scene)
 
         updateAllMaterials()
-
-        gui.add(gltf.scene.rotation, 'y').min(- Math.PI).max(Math.PI).step(0.001).name('rotation')
     }
 )
 
