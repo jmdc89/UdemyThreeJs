@@ -106,10 +106,16 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 camera.position.set(4, 1, - 4)
 scene.add(camera)
 
+
 // Lights
 const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(0.25, 3, - 2.25)
+directionalLight.castShadow = true
+// const directionalLightCameraHelper = new THREE.CameraHelper(directionalLight.shadow.camera)
+directionalLight.shadow.camera.far = 15
+// scene.add(directionalLightCameraHelper)
 scene.add(directionalLight)
+
 
 gui.add(directionalLight, 'intensity').min(0).max(10).step(0.001).name('lightIntensity')
 gui.add(directionalLight.position, 'x').min(- 5).max(5).step(0.001).name('lightX')
@@ -133,6 +139,8 @@ renderer.physicallyCorrectLights = true
 renderer.outputEncoding = THREE.sRGBEncoding
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 renderer.toneMappingExposure = 3
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 gui.add(renderer, 'toneMapping', {
     No: THREE.NoToneMapping,
