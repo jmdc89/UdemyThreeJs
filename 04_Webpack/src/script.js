@@ -40,23 +40,6 @@ const scene = new THREE.Scene()
 // Textures
 const cubeTextureLoader = new THREE.CubeTextureLoader()
 
-/**
- * Environment map
- */
- const environmentMap = cubeTextureLoader.load([
-    '/textures/environmentMaps/0/px.jpg',
-    '/textures/environmentMaps/0/nx.jpg',
-    '/textures/environmentMaps/0/py.jpg',
-    '/textures/environmentMaps/0/ny.jpg',
-    '/textures/environmentMaps/0/pz.jpg',
-    '/textures/environmentMaps/0/nz.jpg'
-])
-
-debugObject.envMapIntensity = 1
-gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001) 
-
-scene.background = environmentMap
-
 
 /**
  * Update all materials
@@ -65,13 +48,30 @@ scene.background = environmentMap
  {
     if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
     {
-        child.material.envMap = environmentMap
-        child.material.envMapIntensity = 2.5
+        // child.material.envMap = environmentMap
+        // child.material.envMapIntensity = 2.5
+        child.material.envMapIntensity = debugObject.envMapIntensity
+        
     }
     
  }
 
- 
+ /**
+ * Environment map
+ */
+  const environmentMap = cubeTextureLoader.load([
+    '/textures/environmentMaps/0/px.jpg',
+    '/textures/environmentMaps/0/nx.jpg',
+    '/textures/environmentMaps/0/py.jpg',
+    '/textures/environmentMaps/0/ny.jpg',
+    '/textures/environmentMaps/0/pz.jpg',
+    '/textures/environmentMaps/0/nz.jpg'
+])
+
+scene.background = environmentMap
+
+debugObject.envMapIntensity = 2.5
+gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(updateAllMaterials)
 
 /**
  * Sizes
