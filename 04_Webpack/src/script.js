@@ -70,6 +70,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
 
 scene.background = environmentMap
 scene.environment = environmentMap
+environmentMap.encoding = THREE.sRGBEncoding
 
 debugObject.envMapIntensity = 2.5
 gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(updateAllMaterials)
