@@ -1,2 +1,6 @@
-export default 'Hello modules'
+// test.js
+export default () =>
+{
+    console.log('Hello modules')
+}
 
