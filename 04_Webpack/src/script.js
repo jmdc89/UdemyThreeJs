@@ -5,7 +5,7 @@
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import test from './test.js'
 
-test()
+console.log(test)
 
 // /**
 //  * Loaders
