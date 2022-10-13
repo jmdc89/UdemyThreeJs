@@ -13,6 +13,8 @@ class Robot
         this.name = name
         this.legs = legs
 
+        this.sayHi()
+
         console.log(`I am ${name}. Thank you creator`)
     }
     sayHi()
