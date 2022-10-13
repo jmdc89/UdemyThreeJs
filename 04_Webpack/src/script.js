@@ -6,10 +6,20 @@
 
 class HelloClass {}
 
-class Robot {}
+class Robot 
+{
+    sayHi()
+    {
+        console.log('Hello!')
+    }
+}
 
 const robot = new Robot()
-console.log(robot)
+const ultron = new Robot()
+const astroBoy = new Robot()
+
+ultron.sayHi()
+astroBoy.sayHi()
 
 // /**
 //  * Loaders
