@@ -23,6 +23,21 @@ class Robot
     }
 }
 
+// inheritance
+
+class FlyingRobot extends Robot
+{
+    takeOff()
+    {
+        console.log(`Have a good flight ${this.name}`)
+    }
+
+    land()
+    {
+        console.log(`Welcome back ${this.name}`)
+    }
+}
+
 const robot = new Robot()
 
 ultron.sayHi()
