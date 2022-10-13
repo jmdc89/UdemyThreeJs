@@ -8,6 +8,10 @@ class HelloClass {}
 
 class Robot 
 {
+    constructor(name)
+    {
+        console.log(`I am ${name}. Thank you creator`)
+    }
     sayHi()
     {
         console.log('Hello!')
@@ -15,11 +19,13 @@ class Robot
 }
 
 const robot = new Robot()
-const ultron = new Robot()
-const astroBoy = new Robot()
 
 ultron.sayHi()
 astroBoy.sayHi()
+
+const wallE = new Robot('Wall-E')
+const ultron = new Robot('Ultron')
+const astroBoy = new Robot('Astro Boy')
 
 // /**
 //  * Loaders
