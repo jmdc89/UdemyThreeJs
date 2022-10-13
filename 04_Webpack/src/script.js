@@ -3,51 +3,13 @@
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'lil-gui'
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-
-class HelloClass {}
-
-class Robot 
-{
-    constructor(name, legs)
-    {
-        this.name = name
-        this.legs = legs
-
-        this.sayHi()
-
-        console.log(`I am ${name}. Thank you creator`)
-    }
-    sayHi()
-    {
-        console.log('Hello!')
-    }
-}
-
-// inheritance
-
-class FlyingRobot extends Robot
-{
-    takeOff()
-    {
-        console.log(`Have a good flight ${this.name}`)
-    }
-
-    land()
-    {
-        console.log(`Welcome back ${this.name}`)
-    }
-}
-
-const robot = new Robot()
-
-ultron.sayHi()
-astroBoy.sayHi()
+import Robot from './Robot.js'
+import FlyingRobot from './FlyingRobot.js'
 
 const wallE = new Robot('Wall-E', 0)
-const ultron = new Robot('Ultron', 2)
-const astroBoy = new Robot('Astro Boy', 2)
+const ultron = new FlyingRobot('Ultron', 2)
+const astroBoy = new FlyingRobot('Astro Boy', 2)
 
-console.log(wallE.legs)
 
 // /**
 //  * Loaders
