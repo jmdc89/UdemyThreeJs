@@ -3,9 +3,13 @@
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'lil-gui'
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import test from './test.js'
 
-console.log(test)
+class HelloClass {}
+
+class Robot {}
+
+const robot = new Robot()
+console.log(robot)
 
 // /**
 //  * Loaders
