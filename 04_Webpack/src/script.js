@@ -12,7 +12,7 @@ class Robot
     {
         this.name = name
         this.legs = legs
-        
+
         console.log(`I am ${name}. Thank you creator`)
     }
     sayHi()
@@ -26,9 +26,11 @@ const robot = new Robot()
 ultron.sayHi()
 astroBoy.sayHi()
 
-const wallE = new Robot('Wall-E')
-const ultron = new Robot('Ultron')
-const astroBoy = new Robot('Astro Boy')
+const wallE = new Robot('Wall-E', 0)
+const ultron = new Robot('Ultron', 2)
+const astroBoy = new Robot('Astro Boy', 2)
+
+console.log(wallE.legs)
 
 // /**
 //  * Loaders
