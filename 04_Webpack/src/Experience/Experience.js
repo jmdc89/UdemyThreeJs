@@ -2,6 +2,7 @@ export default class Experience
 {
     constructor()
     {
-        console.log('Here starts a great experience')
+        // Global access
+        window.experience = this
     }
 }
