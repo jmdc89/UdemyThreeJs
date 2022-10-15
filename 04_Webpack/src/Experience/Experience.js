@@ -13,5 +13,9 @@ export default class Experience
 
         // Setup
         this.sizes = new Sizes()
+
+        console.log(this.sizes.width)
+        console.log(this.sizes.height)
+        console.log(this.sizes.pixelRatio)
     }
 }
