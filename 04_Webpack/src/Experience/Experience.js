@@ -17,5 +17,12 @@ export default class Experience
         console.log(this.sizes.width)
         console.log(this.sizes.height)
         console.log(this.sizes.pixelRatio)
+    
+        // Resize event
+        this.sizes.on('resize', () =>
+        {
+            console.log('A resize occurred')
+        })
+    
     }
 }
