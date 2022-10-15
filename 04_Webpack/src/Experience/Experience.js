@@ -21,8 +21,13 @@ export default class Experience
         // Resize event
         this.sizes.on('resize', () =>
         {
-            console.log('A resize occurred')
+            this.resize()
         })
     
+    }
+
+    resize()
+    {
+
     }
 }
