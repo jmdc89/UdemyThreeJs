@@ -1,5 +1,5 @@
 import Sizes from './Utils/Sizes.js'
-
+import Time from './Utils/Time.js'
 
 export default class Experience
 {
@@ -13,6 +13,7 @@ export default class Experience
 
         // Setup
         this.sizes = new Sizes()
+        this.time = new Time()
 
         console.log(this.sizes.width)
         console.log(this.sizes.height)
