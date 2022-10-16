@@ -15,14 +15,17 @@ export default class Experience
         this.sizes = new Sizes()
         this.time = new Time()
 
-        console.log(this.sizes.width)
-        console.log(this.sizes.height)
-        console.log(this.sizes.pixelRatio)
     
         // Resize event
         this.sizes.on('resize', () =>
         {
             this.resize()
+        })
+
+        // Time tick event
+        this.time.on('tick', () =>
+        {
+            this.update()
         })
     
     }
@@ -30,5 +33,10 @@ export default class Experience
     resize()
     {
 
+    }
+
+    update()
+    {
+        
     }
 }
