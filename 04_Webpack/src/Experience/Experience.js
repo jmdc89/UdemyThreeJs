@@ -49,6 +49,6 @@ export default class Experience
 
     update()
     {
-        
+        this.camera.update()
     }
 }
