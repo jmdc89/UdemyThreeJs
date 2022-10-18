@@ -3,6 +3,8 @@ import Time from './Utils/Time.js'
 import * as THREE from 'three'
 import Camera from './Camera.js'
 
+let instance = null
+
 export default class Experience
 {
     constructor(canvas)
@@ -13,7 +15,7 @@ export default class Experience
              return instance
          }
          instance = this
-         
+
         // Global access
         window.experience = this
 
