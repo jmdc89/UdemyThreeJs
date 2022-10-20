@@ -8,5 +8,10 @@ export default class Resources extends EventEmitter
 
         // Options
         this.sources = sources
+
+        // Setup
+        this.items = {}
+        this.toLoad = this.sources.length
+        this.loaded = 0
     }
 }
