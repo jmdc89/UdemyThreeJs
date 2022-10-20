@@ -5,5 +5,8 @@ export default class Resources extends EventEmitter
     constructor()
     {
         super()
+
+        // Options
+        this.sources = sources
     }
 }
