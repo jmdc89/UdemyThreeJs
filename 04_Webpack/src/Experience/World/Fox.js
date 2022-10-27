@@ -12,6 +12,7 @@ export default class Fox
         this.resource = this.resources.items.foxModel
         this.setModel()
         this.setAnimation()
+        this.time = this.experience.time
     }
 
     setModel()
@@ -35,5 +36,10 @@ export default class Fox
         this.animation.mixer = new THREE.AnimationMixer(this.model)
         this.animation.action = this.animation.mixer.clipAction(this.resource.animations[0])
         this.animation.action.play()
+    }
+
+    update()
+    {
+        this.animation.mixer.update(this.time.delta * 0.001)
     }
 }
