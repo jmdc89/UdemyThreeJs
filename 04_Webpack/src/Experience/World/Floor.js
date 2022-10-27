@@ -35,4 +35,12 @@ export default class Floor
         this.textures.normal.wrapS = THREE.RepeatWrapping
         this.textures.normal.wrapT = THREE.RepeatWrapping
     }
+
+    setMaterial()
+    {
+        this.material = new THREE.MeshStandardMaterial({
+            map: this.textures.color,
+            normalMap: this.textures.normal
+        })
+    }
 }
